@@ -1,4 +1,4 @@
-# frozen_string_literal: true
+require 'active_support/all'
 
 puts 'Enter date'
 puts 'day:'
@@ -7,7 +7,7 @@ puts 'month:'
 @month = gets.to_i
 puts 'year:'
 @year = gets.to_i
-week = 7
+
 def leap_year?(year)
   (year % 4).zero? && year % 100 != 0 || (year % 400).zero?
 end
@@ -20,35 +20,22 @@ units = gets.chomp!.to_i
 h_units = { 1 => 'day', 2 => 'week', 3 => 'month', 4 => 'year' }
 units_func = { 1 => @day, 2 => @day, 3 => @month, 4 => @year }
 puts 'Enter duration (integer value):'
-@duration = gets.chomp!.to_i
+@duration = gets.to_i
 puts 'Enter the number of subsequent dates (integer value):'
-@n = gets.chomp!.to_i
+@n = gets.to_i
 
-@month31 = [1, 3, 5, 7, 8, 10, 12]
-@month30 = [4, 6, 8, 9, 11]
+p @input = Time.new(@year, @month, @day)
 
-day_counter = lambda do |_day|
-  @day += @duration
+day_counter = -> {  @input += 86_400 * @duration }
 
-  if leap_year?(@year) && (@month == 2)
-
-  end
-  if @month31.include? @month
-  end
-end
-
-week_counter = ->(day) { p day }
-month_counter = -> {}
-
-year_counter = lambda do |_year|
-  @year += @duration
-  p "#{@day}/#{@month}/#{@year}"
-end
+week_counter = -> { @input += 604_800 * @duration }
+month_counter = -> {  @input += @duration.month }
+year_counter = -> { @input += @duration.year }
 
 hh = { 'day' => day_counter, 'week' => week_counter, 'month' => month_counter, 'year' => year_counter }
 
 if hh[h_units[units]]
   @n.times do
-    res = hh[h_units[units]].call units_func[units]
+    p hh[h_units[units]].call
   end
 end
