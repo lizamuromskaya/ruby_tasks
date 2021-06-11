@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-class Hash
+module SafeInvert
   def safe_invert
     new_hash = {}
     each do |k, v|
@@ -21,15 +21,3 @@ class Hash
                 end
   end
 end
-
-fruits_country = {
-
-  'orange' => 'Marocco',
-
-  'banana' => 'Ecuador',
-
-  'lemon' => 'Marocco'
-
-}
-puts fruits_country
-puts fruits_country.safe_invert

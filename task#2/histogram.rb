@@ -4,12 +4,12 @@ def to_histogram(array)
   array_key = array.uniq
   hh = {}
 
-  array_key.each do |key| # orange 0
+  array_key.each do |key|
     value = 0
 
-    array.each do |el| # orange
+    array.each do |element|
       hh[key] = value
-      if el == key
+      if element == key
         value += 1
         hh[key] = value
       end
@@ -17,6 +17,3 @@ def to_histogram(array)
   end
   hh
 end
-
-array = %w[orange banana banana banana lemon lemon kiwi]
-p to_histogram(array)
