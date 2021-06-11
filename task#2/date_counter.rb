@@ -10,9 +10,6 @@ module DateCounter
   puts 'year:'
   @year = gets.to_i
 
-  def leap_year?(year)
-    (year % 4).zero? && year % 100 != 0 || (year % 400).zero?
-  end
   puts 'Enter units of measurement:
 1 - day,
 2 - week,
