@@ -1,6 +1,5 @@
 ## Task1 ##
 1. Arrays, Hashes, and Enumerables
-)
 
     Define a method sum(array) that takes an array of integers as an argument and returns the sum of its elements. For an empty array it should return zero. Run associated tests via: $ rspec -e '#sum ' spec/part1_spec.rb
 
@@ -9,7 +8,6 @@
     Define a method sum_to_n?(array, n) that takes an array of integers and an additional integer, n, as arguments and returns true if any two elements in the array of integers sum to n. sum_to_n?([], n) should return false for any value of n, by definition. Run associated tests via: $ rspec -e '#sum_to_n' spec/part1_spec.rb
 
 2. Strings and Regular Expressions
-)
 
     Define a method hello(name) that takes a string representing a name and returns the string "Hello, " concatenated with the name. Run associated tests via: $ rspec -e '#hello' spec/part2_spec.rb
 
@@ -19,7 +17,6 @@
 
 
 3. Object Oriented Basics
-)
 
     Define a class BookInStock which represents a book with an ISBN number, isbn, and price of the book as a floating-point number, price, as attributes. Run associated tests via: $ rspec -e 'getters and setters' spec/part3_spec.rb
 
@@ -31,7 +28,7 @@
 ## Task2 ##
 1. С клавиатуры вводится дата, единицы измерения(день, неделя, месяц, год) и длительность(целочисленное значение),
     нужно вывести N последующих дат - использовать Хеш (ключ - ед.измерения, значения - Лямбда )
-    Например:
+    - Например:
     вводится дата                                 9/18/2020
     единицы измерения(день, неделя, месяц, год)   month
     и длительность(целочисленное значение)        10
