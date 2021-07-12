@@ -1,4 +1,4 @@
-#Task1#
+## Task1 ##
 1. Arrays, Hashes, and Enumerables
 
 Check the Ruby 2.x documentation on Array, Hash and Enumerable as they could help tremendously with these exercises. :-)
@@ -30,3 +30,5 @@ The constructor should accept the ISBN number (a string, since in real life ISBN
 Include a method price_as_string that returns the price of the book formatted with a leading dollar sign and two decimal places, that is, a price of 20 should format as "$20.00" and a price of 33.8 should format as "$33.80". Run associated tests via: $ rspec -e '#price_as_string' spec/part3_spec.rb
 
 You can check your progress on the all the above by running rspec spec/part3_spec.rb.
+
+## Task2 ##
